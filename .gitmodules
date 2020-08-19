@@ -1,0 +1,3 @@
+[submodule "imagemagic-app"]
+	path = imagemagic-app
+	url = git@github.com:vitfury/imagemagic-app.git
