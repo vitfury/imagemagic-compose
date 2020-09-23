@@ -17,7 +17,7 @@ services:
     background-removal-worker:
       image: scriptilia/background-removal-worker:latest
       ports:
-        - "7007:80"
+        - "${BACKGROUND_REMOVAL_WORKER_PORT}:80"
       networks:
         - backend
 
