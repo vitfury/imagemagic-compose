@@ -1406,8 +1406,6 @@ bindkey "^?" backward-delete-char\n' >> /home/laradock/.zshrc \
 
 USER root
 
-RUN chmod -R 755 storage bootstrap/cache
-
 #
 #--------------------------------------------------------------------------
 # Final Touch
