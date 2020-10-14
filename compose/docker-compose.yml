@@ -198,10 +198,10 @@ services:
         context: ./certbot
       volumes:
         - ./data/certbot/certs/:/var/certs
-        - ./certbot/letsencrypt/:/var/www/letsencrypt
+        - ${APP_CODE_PATH_HOST}:/var/www
       environment:
-        - CN="fake.domain.com"
-        - EMAIL="fake.email@gmail.com"
+        - CN=sticker.pub
+        - EMAIL=omelchenkovitaly@gmail.com
       networks:
         - frontend
 
