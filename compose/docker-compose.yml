@@ -109,6 +109,7 @@ services:
       volumes:
         - ./php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
+        - ${ACTUAL_STORAGE_VOLUME_PATH}:/var/volume
       expose:
         - "9000"
       extra_hosts:
@@ -173,6 +174,7 @@ services:
         - ${NGINX_HOST_LOG_PATH}:/var/log/nginx
         - ${NGINX_SITES_PATH}:/etc/nginx/sites-available
         - ${NGINX_SSL_PATH}:/etc/nginx/ssl
+        - ${ACTUAL_STORAGE_VOLUME_PATH}:/var/volume:rw
         - ./data/certbot/certs/:/var/certs
       ports:
         - "${NGINX_HOST_HTTP_PORT}:80"
@@ -202,6 +204,7 @@ services:
         - ${APP_CODE_PATH_HOST}:/var/www
       environment:
         - CN=sticker.pub
+        - WWWCN=www.sticker.pub
         - EMAIL=omelchenkovitaly@gmail.com
       networks:
         - frontend
